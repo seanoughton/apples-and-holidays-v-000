@@ -96,8 +96,8 @@ def all_supplies_in_holidays(holiday_hash)
   holiday_hash.each do |key_01,value_01|
     puts "#{key_01.capitalize}:" #season
     value_01.each do |key_02, value_02|
-      holiday = "#{key_02}".gsub(/_/," ")
-      holiday = holiday.split.collect do|x|
+      holiday = "#{key_02}".gsub(/_/," ")#take out underscores
+      holiday = holiday.split.collect do|x| #capitalize all words
         x.capitalize
       end
       puts "  #{holiday.join(' ')}: #{value_02.join(", ")}".gsub(/_/," ")
